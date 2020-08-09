@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">Centurion Console</string>
+
+    <string name="strength_help_text">
+        Strength is used to measure physical power.\n
+        Your strength modifier will also apply to the following check:\n
+        Athletics
+    </string>
+    <string name="dexterity_help_text">
+        Dexterity is used to measure agility.\n
+        Your dexterity modifier will also apply to the following checks:\n
+        Acrobatics\n
+        Initiative\n
+        Sleight of Hand\n
+        Stealth\n
+    </string>
+    <string name="intelligence_help_text">
+        Intelligence is used to measure reasoning and memory.\n
+        Your intelligence modifier will also apply to the following checks:\n
+        History\n
+        Investigation\n
+        Nature\n
+        Religion\n
+    </string>
+    <string name="wisdom_help_text">
+        Wisdom is used to measure perception and insight.\n
+        Your wisdom modifier will also apply to the following checks:\n
+        Animal Handling\n
+        Insight\n
+        Medicine\n
+        Perception\n
+        Survival\n
+    </string>
+    <string name="charisma_help_text">
+        Charisma is used to measure force of personality.\n
+        Your modifier will also apply to the following checks:\n
+        Deception\n
+        Intimidation\n
+        Performance\n
+        Persuasion\n
+    </string>
+    <string name="constitution_help_text">
+        Constitution is used to measure endurance.\n
+        This doesn\'t influence any other checks.
+    </string>
 </resources>

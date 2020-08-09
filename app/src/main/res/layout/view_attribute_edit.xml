@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/attributeEditName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.CenturionConsole.NormalText"
+        android:gravity="center"
+        android:text="Constitution"
+        android:maxLines="1"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/attributeEditReduceButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/attributeEditNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/attributeEditNumber"
+        style="@style/Widget.CenturionConsole.Button.TextButton.Red"
+        android:text="-">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/attributeEditNumber"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attributeEditName"
+        android:text="10"
+        style="@style/TextAppearance.CenturionConsole.NormalText">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/attributeEditIncreaseButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/attributeEditNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/attributeEditNumber"
+        style="@style/Widget.CenturionConsole.Button.TextButton.Green"
+        android:text="+">
+
+    </Button>
+
+    <Button
+        android:id="@+id/attributeHelpButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attributeEditNumber"
+        style="@style/Widget.CenturionConsole.Button.TextButton.Blue"
+        android:text="?">
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

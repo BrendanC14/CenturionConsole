@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/addPersonalityHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/TextAppearance.CenturionConsole.Title"
+        android:text="Personalities">
+
+    </TextView>
+
+    <GridView
+        android:id="@+id/addPersonalityGrid"
+        android:layout_width="333dp"
+        android:layout_height="500dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addPersonalityHeader"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:horizontalSpacing="11dp"
+        android:layout_marginEnd="8dp">
+
+    </GridView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

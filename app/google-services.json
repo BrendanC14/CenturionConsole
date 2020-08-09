@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "709800877990",
+    "firebase_url": "https://centurionconsole.firebaseio.com",
+    "project_id": "centurionconsole",
+    "storage_bucket": "centurionconsole.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709800877990:android:1a7fdbe25196cfbbc73967",
+        "android_client_info": {
+          "package_name": "com.cutlerdevelopment.centurionconsole"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709800877990-7nnplh0r4hi18ckmnvtcggcf8tuf7lq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmnq3baj0h4xbnQBQxzENJ7S2LbG6rynU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709800877990-7nnplh0r4hi18ckmnvtcggcf8tuf7lq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
