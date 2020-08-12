@@ -89,6 +89,9 @@ public class FirestoreHandler {
             modifierNames = (ArrayList<String>) doc.get(FirestoreKeys.CENTURION_PERSONALITIES_KEY);
             centurions.add(new Centurion(
                     doc.getString(FirestoreKeys.CENTURION_NAME_KEY),
+                    doc.getLong(FirestoreKeys.CENTURION_AGE_KEY).intValue(),
+                    doc.getString(FirestoreKeys.CENTURION_OCCUPATION_KEY),
+                    doc.getString(FirestoreKeys.CENTURION_BIRTHPLACE_KEY),
                     doc.getString(FirestoreKeys.CENTURION_BIO_KEY),
                     attributes,
                     modifierNames,

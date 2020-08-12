@@ -1,11 +1,14 @@
 package com.cutlerdevelopment.centurionconsole.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
@@ -22,18 +25,17 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class AddCenturion extends AppCompatActivity implements EditAttributeAdapter.EditAttributeListener, PersonalitySummarayAdapter.PersonalityListener {
 
-    private TextInputEditText nameText, bioText;
+    private TextInputEditText nameText, ageText, occupationText, birthplaceText, bioText;
     private TextView pointsText, personalityCostText;
     private GridView attributeGrid;
     private LinearLayout personalityModifierLayout;
-    private Button saveButton;
+    private ConstraintLayout part1Layout, part2Layout;
+    private Button backButton, nextButton, saveButton;
 
     private EditAttributeAdapter adapter;
-    private PersonalitySummarayAdapter personalitySummarayAdapter;
 
     private int attributePoints;
     private int personalityCosts;
@@ -45,11 +47,18 @@ public class AddCenturion extends AppCompatActivity implements EditAttributeAdap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_centurion);
         nameText = findViewById(R.id.addCenturionNameText);
+        ageText = findViewById(R.id.addCenturionAgeText);
+        occupationText = findViewById(R.id.addCenturionOccupationText);
+        birthplaceText = findViewById(R.id.addCenturionBirthplaceText);
         bioText = findViewById(R.id.addCenturionBioText);
         pointsText = findViewById(R.id.addCenturionPointsAvailable);
         personalityCostText = findViewById(R.id.addCenturionPersonalityCosts);
         attributeGrid = findViewById(R.id.addCenturionAttributesGrid);
         personalityModifierLayout = findViewById(R.id.addCenturionPersonalityLayout);
+        part1Layout = findViewById(R.id.addCenturionPart1Layout);
+        part2Layout = findViewById(R.id.addCenturionPart2Layout);
+        backButton = findViewById(R.id.addCenturionBackButton);
+        nextButton = findViewById(R.id.addCenturionNextButton);
         saveButton = findViewById(R.id.addCenturionSaveButton);
 
         pointsText.setText("0 points remaining.");
@@ -221,13 +230,80 @@ public class AddCenturion extends AppCompatActivity implements EditAttributeAdap
             nameText.setHint("Choose a name");
             return;
         }
+        int age = Integer.parseInt(ageText.getText().toString());
+        String occupation = occupationText.getText().toString();
+        String birthplace = birthplaceText.getText().toString();
         String bio = bioText.getText().toString();
         ArrayList<String> modifierNames = new ArrayList<>();
         for (PersonalityModifier modifier : modifiersSelected) {
             modifierNames.add(modifier.getName());
         }
-        new Centurion(name, bio, adapter.getAttributes(), modifierNames, false);
+        new Centurion(name, age, occupation, birthplace, bio, adapter.getAttributes(), modifierNames, false);
         finish();
+    }
+
+    public void backPressed(View view) {
+        part1Layout.setVisibility(View.VISIBLE);
+        part2Layout.setVisibility(View.GONE);
+        Animation.AnimationListener listener = new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                nextButton.setVisibility(View.VISIBLE);
+                backButton.setVisibility(View.GONE);
+                part1Layout.clearAnimation();
+                part2Layout.clearAnimation();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        };
+
+        Animation slideOutAnim = AnimationUtils.loadAnimation(this, R.anim.slide_out_right);
+        Animation slideInAnim = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
+        slideOutAnim.setAnimationListener(listener);
+        slideInAnim.setAnimationListener(listener);
+        part1Layout.startAnimation(slideInAnim);
+        part2Layout.startAnimation(slideOutAnim);
+    }
+    public void nextPressed(View view) {
+        part1Layout.setVisibility(View.GONE);
+        part2Layout.setVisibility(View.VISIBLE);
+
+        Animation.AnimationListener listener = new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                nextButton.setVisibility(View.GONE);
+                backButton.setVisibility(View.VISIBLE);
+                part1Layout.clearAnimation();
+                part2Layout.clearAnimation();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        };
+
+        Animation slideOutAnim = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation slideInAnim = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        slideOutAnim.setAnimationListener(listener);
+        slideInAnim.setAnimationListener(listener);
+        part1Layout.startAnimation(slideOutAnim);
+        part2Layout.startAnimation(slideInAnim);
+
+
     }
 }
 

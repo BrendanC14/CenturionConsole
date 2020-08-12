@@ -7,178 +7,331 @@
     android:background="#000000"
     tools:context=".Activities.AddCenturion">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addCenturionNameInput"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addCenturionPart1Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        style="@style/Widget.CenturionConsole.TextInputLayout"
-        android:layout_marginTop="8dp">
+        app:layout_constraintBottom_toTopOf="@+id/addCenturionButtonBanner">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addCenturionNameText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addCenturionNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="Centurion's Name" />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.CenturionConsole.TextInputLayout"
+            android:layout_marginTop="8dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/addCenturionBioInput"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCenturionNameInput"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        style="@style/Widget.CenturionConsole.TextInputLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addCenturionNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeActionLabel="Done"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:hint="Your Name" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addCenturionBioText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addCenturionAgeInput"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:hint="Bio" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionNameInput"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.CenturionConsole.TextInputLayout"
+            android:layout_marginTop="8dp">
 
-    <TextView
-        android:id="@+id/addCenturionAttributesHeader"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addCenturionAgeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeActionLabel="Done"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:hint="Age (in Sol Years)" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addCenturionOccupationInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionAgeInput"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.CenturionConsole.TextInputLayout"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addCenturionOccupationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeActionLabel="Done"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:hint="Current Occupation" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addCenturionBirthplaceInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionOccupationInput"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.CenturionConsole.TextInputLayout"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addCenturionBirthplaceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:imeActionLabel="Done"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:hint="Place of Birth" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/addCenturionBioInput"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionBirthplaceInput"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.CenturionConsole.TextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addCenturionBioText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:imeActionLabel="Done"
+                android:inputType="textCapSentences"
+                android:imeOptions="actionDone"
+                android:hint="Tell me about yourself" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addCenturionPart2Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/addCenturionBioInput"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        style="@style/TextAppearance.CenturionConsole.Title"
-        android:text="Attributes">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addCenturionButtonBanner"
+        android:visibility="gone">
 
-    </TextView>
+        <TextView
+            android:id="@+id/addCenturionAttributesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.CenturionConsole.Title"
+            android:text="Attributes">
 
-    <Button
-        android:id="@+id/addCenturionAttributeHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addCenturionAttributesHeader"
-        app:layout_constraintBottom_toBottomOf="@+id/addCenturionAttributesHeader"
-        style="@style/Widget.CenturionConsole.Button.TextButton.Blue"
-        android:onClick="attributeHelp"
-        android:text="?">
+        </TextView>
 
-    </Button>
-
-    <TextView
-        android:id="@+id/addCenturionPointsAvailable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addCenturionAttributeHelp"
-        style="@style/TextAppearance.CenturionConsole.SmallText">
-
-    </TextView>
-
-    <GridView
-        android:id="@+id/addCenturionAttributesGrid"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addCenturionPointsAvailable"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
-
-    </GridView>
-
-    <TextView
-        android:id="@+id/addCenturionPersonalityHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/addCenturionAttributesGrid"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        style="@style/TextAppearance.CenturionConsole.Title"
-        android:text="Personality Modifiers">
-
-    </TextView>
-
-    <Button
-        android:id="@+id/addCenturionPersonalityHelp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addCenturionPersonalityHeader"
-        app:layout_constraintBottom_toBottomOf="@+id/addCenturionPersonalityHeader"
-        style="@style/Widget.CenturionConsole.Button.TextButton.Blue"
-        android:onClick="personalityHelp"
-        android:text="?">
-
-    </Button>
-
-    <TextView
-        android:id="@+id/addCenturionPersonalityCosts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addCenturionPersonalityHeader"
-        android:layout_marginTop="8dp"
-        style="@style/TextAppearance.CenturionConsole.SmallText">
-
-    </TextView>
-
-    <HorizontalScrollView
-        android:id="@+id/addCenturionPersonalityScroll"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCenturionPersonalityCosts">
-
-        <LinearLayout
-            android:id="@+id/addCenturionPersonalityLayout"
+        <Button
+            android:id="@+id/addCenturionAttributeHelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/addCenturionAttributesHeader"
+            app:layout_constraintBottom_toBottomOf="@+id/addCenturionAttributesHeader"
+            style="@style/Widget.CenturionConsole.Button.TextButton.Blue"
+            android:onClick="attributeHelp"
+            android:text="?">
 
-        </LinearLayout>
+        </Button>
 
-    </HorizontalScrollView>
+        <TextView
+            android:id="@+id/addCenturionPointsAvailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addCenturionAttributeHelp"
+            style="@style/TextAppearance.CenturionConsole.SmallText">
 
-    <Button
-        android:id="@+id/addCenturionAddPersonality"
-        android:layout_width="wrap_content"
+        </TextView>
+
+        <GridView
+            android:id="@+id/addCenturionAttributesGrid"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addCenturionPointsAvailable"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+        </GridView>
+
+        <TextView
+            android:id="@+id/addCenturionPersonalityHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionAttributesGrid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            style="@style/TextAppearance.CenturionConsole.Title"
+            android:text="Personality Modifiers">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/addCenturionPersonalityHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/addCenturionPersonalityHeader"
+            app:layout_constraintBottom_toBottomOf="@+id/addCenturionPersonalityHeader"
+            style="@style/Widget.CenturionConsole.Button.TextButton.Blue"
+            android:onClick="personalityHelp"
+            android:text="?">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/addCenturionPersonalityCosts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addCenturionPersonalityHeader"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.CenturionConsole.SmallText">
+
+        </TextView>
+
+        <HorizontalScrollView
+            android:id="@+id/addCenturionPersonalityScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionPersonalityCosts">
+
+            <LinearLayout
+                android:id="@+id/addCenturionPersonalityLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/addCenturionAddPersonality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addCenturionPersonalityScroll"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.CenturionConsole.Button"
+            android:onClick="openPersonalityModifiers"
+            android:text="Add">
+
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addCenturionButtonBanner"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addCenturionPersonalityScroll"
-        android:layout_marginEnd="8dp"
-        style="@style/Widget.CenturionConsole.Button"
-        android:onClick="openPersonalityModifiers"
-        android:text="Add">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    </Button>
 
-    <Button
-        android:id="@+id/addCenturionSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/addCenturionAddPersonality"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        style="@style/Widget.CenturionConsole.Button"
-        android:onClick="saveCenturion"
-        android:text="Save">
+        <Button
+            android:id="@+id/addCenturionBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/addCenturionCentreDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.CenturionConsole.Button"
+            android:onClick="backPressed"
+            android:visibility="gone"
+            android:text="Back">
 
-    </Button>
+        </Button>
+
+        <TextView
+            android:id="@+id/addCenturionCentreDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/addCenturionNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/addCenturionCentreDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.CenturionConsole.Button"
+            android:onClick="nextPressed"
+            android:text="Next">
+
+        </Button>
+
+        <Button
+            android:id="@+id/addCenturionSaveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.CenturionConsole.Button"
+            android:onClick="saveCenturion"
+            android:visibility="gone"
+            android:text="Submit">
+
+        </Button>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,7 @@ public class CenturionsActivity extends AppCompatActivity implements FirestoreLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_centurions);
+        FirestoreHandler.getInstance().addAListener(this);
         centurionsButtonsParent =  findViewById(R.id.activityCenturionsButtonsParent);
         for (Centurion centurion : DataHolder.getInstance().getCenturions()) {
             addCenturionButton(centurion);

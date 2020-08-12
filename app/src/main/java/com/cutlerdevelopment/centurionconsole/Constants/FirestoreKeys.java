@@ -4,6 +4,9 @@ public class FirestoreKeys {
 
     public static final String CENTURIONS_COLLECTION_NAME = "Centurions";
     public static final String CENTURION_NAME_KEY = "Name";
+    public static final String CENTURION_AGE_KEY = "Age";
+    public static final String CENTURION_OCCUPATION_KEY = "Occupation";
+    public static final String CENTURION_BIRTHPLACE_KEY = "Birthplace";
     public static final String CENTURION_BIO_KEY = "Bio";
     public static final String CENTURION_ATTRIBUTES_KEY = "Attributes";
     public static final String CENTURION_PERSONALITIES_KEY = "Personalities";

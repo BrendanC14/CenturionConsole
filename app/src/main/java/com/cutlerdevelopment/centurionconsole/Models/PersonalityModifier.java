@@ -41,7 +41,11 @@ public class PersonalityModifier {
                 description + "\n" +
                 "Modifiers: \n";
         for (Map.Entry<String, Integer> pair : modifierMap.entrySet()) {
-            textToDisplay += pair.getKey() + ": " + pair.getValue() + "\n";
+            textToDisplay += pair.getKey() + ": " +
+                    (pair.getValue() > 0
+                    ? "+" + pair.getValue()
+                    : pair.getValue())
+                    + "\n";
         }
         return textToDisplay;
     }

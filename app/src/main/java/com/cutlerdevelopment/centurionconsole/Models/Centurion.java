@@ -17,12 +17,25 @@ import java.util.Map;
 public class Centurion implements Parcelable {
 
     private String name;
+    private int age;
+    private String occupation;
+    private String birthplace;
     private String bio;
     private ArrayList<Attribute> attributes;
     private ArrayList<String> personalityModifiers;
 
-    public Centurion(String name, String bio, ArrayList<Attribute> attributes, ArrayList<String> personalityModifiers, Boolean loading) {
+    public Centurion(String name,
+                     int age,
+                     String occupation,
+                     String birthplace,
+                     String bio,
+                     ArrayList<Attribute> attributes,
+                     ArrayList<String> personalityModifiers,
+                     Boolean loading) {
         this.name = name;
+        this.age = age;
+        this.occupation = occupation;
+        this.birthplace = birthplace;
         this.bio = bio;
         this.attributes = attributes;
         this.personalityModifiers = personalityModifiers;
@@ -33,6 +46,9 @@ public class Centurion implements Parcelable {
 
     protected Centurion(Parcel in) {
         name = in.readString();
+        age = in.readInt();
+        occupation = in.readString();
+        birthplace = in.readString();
         bio = in.readString();
         this.attributes = new ArrayList<>();
         in.readTypedList(attributes, Attribute.CREATOR);
@@ -43,7 +59,9 @@ public class Centurion implements Parcelable {
     public String getName() {
         return name;
     }
-
+    public int getAge() { return age; }
+    public String getOccupation() { return occupation; }
+    public String getBirthplace() { return birthplace; }
     public String getBio() {
         return bio;
     }
@@ -69,6 +87,9 @@ public class Centurion implements Parcelable {
 
         Map<String, Integer> attributeMap = new HashMap<>();
         dataMap.put(FirestoreKeys.CENTURION_NAME_KEY, this.name);
+        dataMap.put(FirestoreKeys.CENTURION_AGE_KEY, this.age);
+        dataMap.put(FirestoreKeys.CENTURION_OCCUPATION_KEY, this.occupation);
+        dataMap.put(FirestoreKeys.CENTURION_BIRTHPLACE_KEY, this.birthplace);
         dataMap.put(FirestoreKeys.CENTURION_BIO_KEY, this.bio);
         for (Attribute attribute : this.attributes) {
             attributeMap.put(AttributeHelper.getAttributeName(attribute.getType(), true), attribute.getValue());
@@ -98,6 +119,9 @@ public class Centurion implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
+        parcel.writeInt(age);
+        parcel.writeString(occupation);
+        parcel.writeString(birthplace);
         parcel.writeString(bio);
         parcel.writeTypedList(attributes);
         parcel.writeStringList(personalityModifiers);
